@@ -31,3 +31,21 @@ This project demonstrates an augmented reality (AR) application using OpenCV and
 2. **Script File:**
 
    Ensure that the main Python script (e.g., main.py) contains the provided code that utilizes the target image and video.
+
+
+## How It Works
+**ORB Feature Detection:**
+   The script initializes an ORB detector to compute keypoints and descriptors for both the target image and the live webcam    feed.
+
+**Feature Matching:**
+   A brute-force matcher with k-nearest neighbors (k=2) is used to find good matches between features from the target image     and the webcam frame. A ratio test is applied to filter out weak matches.
+
+**Homography Estimation:**
+   When sufficient matches are found, a homography matrix is computed using RANSAC. This matrix maps the target image's         plane onto the corresponding area in the webcam frame.
+
+**Video Warping & Overlay:**
+   The video frame is warped using the computed homography matrix so that it fits the perspective of the detected target        area. Bitwise operations merge the warped video with the live webcam feed, creating the AR effect.
+
+**Visualization:**
+   For debugging and demonstration, multiple images (original webcam feed, target image, video frame, feature matches,          warped video, augmented output) are stacked into a single display window.
+   
