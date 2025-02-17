@@ -23,4 +23,11 @@ This project demonstrates an augmented reality (AR) application using OpenCV and
    ```bash
    git clone https://github.com/yourusername/your-repo-name.git
    cd your-repo-name
+## Setup
+1. **Media Files:**
 
+   Place your target image (e.g., ImageTarget.jpg) in the project directory.
+   Place the video file (e.g., video.mp4) you wish to overlay in the project directory.
+2. **Script File:**
+
+   Ensure that the main Python script (e.g., main.py) contains the provided code that utilizes the target image and video.
